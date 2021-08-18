@@ -58,4 +58,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Defines relationship with temperatures.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function temperatures()
+    {
+        return $this->hasMany(Temperature::class);
+    }
 }
